@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "a48a1f8b-76e6-4a65-b6aa-326d13d5131e",
+		"name": "QMetryTests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list of projects",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b090669e-20f8-44cf-aa1e-e5aa0ef97656",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "apikey",
+						"value": "gj6POMCSM0wGldRVbArtNkMCNn3pVjXdcuOQ2VIq"
+					},
+					{
+						"key": "orgCode",
+						"value": "ABNAMRO"
+					},
+					{
+						"key": "scope",
+						"value": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"start\":0,\"limit\":50,\"page\":1,\"params\":{\"showArchive\":false}}"
+				},
+				"url": {
+					"raw": "https://abnamrobank.qmetry.com/rest/admin/project/default/list",
+					"protocol": "https",
+					"host": [
+						"abnamrobank",
+						"qmetry",
+						"com"
+					],
+					"path": [
+						"rest",
+						"admin",
+						"project",
+						"default",
+						"list"
+					]
+				},
+				"description": "API to list all projects"
+			},
+			"response": []
+		}
+	]
+}
