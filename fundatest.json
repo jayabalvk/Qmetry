@@ -1,0 +1,59 @@
+{
+	"variables": [],
+	"info": {
+		"name": "QMetryTests",
+		"_postman_id": "be0a9ba9-46b7-b0ce-6d13-3c9ddc338f29",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FundaTest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://abnamrobank.qmetry.com/rest/admin/project/default/list",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "apikey",
+						"value": "gj6POMCSM0wGldRVbArtNkMCNn3pVjXdcuOQ2VIq"
+					},
+					{
+						"key": "orgCode",
+						"value": "ABNAMRO"
+					},
+					{
+						"key": "scope",
+						"value": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"start\":0,\"limit\":50,\"page\":1,\"params\":{\"showArchive\":false}}"
+				},
+				"description": "API to list all projects"
+			},
+			"response": []
+		}
+	]
+}
